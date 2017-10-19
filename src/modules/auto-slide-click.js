@@ -30,7 +30,6 @@
 	
 	var win = $(window);
 	var html = $('html');
-	var headerFiller = $('.js-header-filler');
 	
 	var CTN_SELECTOR = '.js-auto-slide-click';
 	var ITEM_SELECTOR = '.js-auto-slide-click-item';
@@ -106,18 +105,6 @@
 		return window.pd(e);
 	};
 	
-	var onScrollToCtn = function (key, data) {
-		var target = data.item.closest(ITEM_SELECTOR).offset().top;
-		var offset = headerFiller.outerHeight();
-		var duration = Math.min(350, Math.abs(target - win.scrollTop()));
-		
-		html.velocity('scroll', {
-			offset: (target - offset) + 'px',
-			mobileHA: false,
-			duration: duration
-		});
-	};
-	
 	var init = function () {
 		$('#site').on(App.device.events.click, TRIGGER_SELECTOR, onTriggerClick);
 	};
@@ -126,8 +113,7 @@
 		return {
 			autoSlideClick: {
 				toggleOn: onToggleOn,
-				updateSlideState: updateSlideState,
-				scrollToCtn: onScrollToCtn
+				updateSlideState: updateSlideState
 			}
 		};
 	};

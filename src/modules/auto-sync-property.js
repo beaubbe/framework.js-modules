@@ -120,7 +120,7 @@
 				} else {
 					value = getPropertyValue(source.first(), withProperty);
 				}
-				
+
 				t.css(property, value);
 			}
 		}

@@ -80,11 +80,7 @@
 			var aggregate = t.attr(AGGREGATE_ATTR);
 
 			if (!!commonAncestorSelector) {
-				if (commonAncestorSelector == 'self') {
-					scope = t;
-				} else {
-					scope = t.closest(commonAncestorSelector);
-				}
+				scope = t.closest(commonAncestorSelector);
 			}
 
 			if (!!scope.length) {

@@ -24,8 +24,10 @@
 					return true;
 				}
 			});
-			if (!!!data.url) {
+			if (!data.url) {
 				data.url = window.location.pathname;
+			} else {
+				data.url = data.url.split('?')[0];
 			}
 			titleList[data.url] = title;
 		}

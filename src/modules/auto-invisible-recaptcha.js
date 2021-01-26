@@ -125,6 +125,7 @@
 			load();
 			// Trigger for not in page
 			load(resolveTriggersNotInPage());
+			App.mediator.notify('recaptcha.loaded');
 		};
 	};
 

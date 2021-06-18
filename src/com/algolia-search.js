@@ -198,7 +198,8 @@
 				attributesToHighlight: o.algoliaAttributesToHighlight,
 				restrictSearchableAttributes: o.algoliaSearchableAttributes,
 				highlightPreTag: o.highlightPreTag,
-				highlightPostTag: o.highlightPostTag
+				highlightPostTag: o.highlightPostTag,
+				advancedSyntax: isMultipleWords
 			};
 
 			if (ctn.filter('[data-algolia-filters-mode=filters]').length) {
@@ -212,7 +213,6 @@
 				query: {
 					indexName: o.algolia.index,
 					query: val,
-					advancedSyntax: isMultipleWords,
 					params: queryParams
 				}
 			};
